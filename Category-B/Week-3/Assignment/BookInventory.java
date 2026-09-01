@@ -1,7 +1,8 @@
-class BookInventory {
-    String title;
-    String author;
-    int copiesAvailable;
+public class BookInventory {
+
+    private String title;
+    private String author;
+    private int copiesAvailable;
 
     public BookInventory(String title, String author, int copiesAvailable) {
         this.title = title;
@@ -9,12 +10,10 @@ class BookInventory {
         this.copiesAvailable = copiesAvailable;
     }
 
-    void printEntry() {
+    public void printEntry() {
         System.out.println(title + " by " + author + " - " + copiesAvailable + " copies available");
     }
-}
 
-public class BookInventoryDemo {
     public static void main(String[] args) {
         BookInventory[] books = new BookInventory[4];
         books[0] = new BookInventory("Clean Code", "Robert C. Martin", 3);
@@ -22,8 +21,8 @@ public class BookInventoryDemo {
         books[2] = new BookInventory("Refactoring", "Martin Fowler", 0);
         books[3] = new BookInventory("Design Patterns", "GoF", 2);
 
-        for (BookInventory b : books) {
-            b.printEntry();
+        for (BookInventory book : books) {
+            book.printEntry();
         }
     }
 }

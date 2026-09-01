@@ -1,4 +1,5 @@
-class PayrollAccount {
+public class PayrollAccount {
+
     private double basicSalary;
     private double bonus;
 
@@ -14,28 +15,26 @@ class PayrollAccount {
 
     public void creditBonus(double amount) {
         if (amount <= 0) {
-            System.out.println("Bonus amount must be positive. Credit rejected.");
-        } else {
-            bonus += amount;
-            System.out.println("Bonus credited: Rs " + amount);
+            System.out.println("Bonus amount must be positive. No bonus credited.");
+            return;
         }
+        bonus += amount;
+        System.out.println("Bonus credited: Rs " + amount);
     }
 
     public void deductTax(double percent) {
         if (percent < 0 || percent > 100) {
-            System.out.println("Tax percent must be between 0 and 100. Deduction rejected.");
-        } else {
-            basicSalary -= basicSalary * (percent / 100.0);
-            System.out.println("Tax deducted: " + (int) percent + "%");
+            System.out.println("Tax percent must be between 0 and 100. No tax deducted.");
+            return;
         }
+        basicSalary -= basicSalary * (percent / 100);
+        System.out.println("Tax deducted: " + percent + "%");
     }
 
     public double getNetSalary() {
         return basicSalary + bonus;
     }
-}
 
-public class PayrollAccountDemo {
     public static void main(String[] args) {
         PayrollAccount account = new PayrollAccount(50000);
         account.creditBonus(5000);
