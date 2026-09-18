@@ -13,14 +13,14 @@ public class BookInventory {
         if (copiesAvailable > 0) {
             copiesAvailable--;
         }
-        // else: silently rejected, nothing available
+       
     }
 
     public void checkIn() {
         if (copiesAvailable < copiesTotal) {
             copiesAvailable++;
         }
-        // else: silently rejected, already at full capacity
+       
     }
 
     public int getCopiesAvailable() {
