@@ -2,9 +2,7 @@ package cinehub;
 
 public class AccessChecker {
 
-    // Handles all 5 accessorContext values: SAME_CLASS, SAME_PACKAGE,
-    // DIFFERENT_PACKAGE, SUBCLASS_DIFFERENT_PACKAGE_OWN_TYPE,
-    // SUBCLASS_DIFFERENT_PACKAGE_PARENT_TYPE.
+    
     public static String classifyAccess(String fieldModifier, String accessorContext) {
         switch (fieldModifier) {
             case "private":
@@ -18,8 +16,7 @@ public class AccessChecker {
                         || accessorContext.equals("SUBCLASS_DIFFERENT_PACKAGE_OWN_TYPE")) {
                     return "ALLOWED";
                 }
-                // DIFFERENT_PACKAGE and SUBCLASS_DIFFERENT_PACKAGE_PARENT_TYPE are denied:
-                // protected cross-package access only works through the subclass's own type.
+                
                 return "DENIED";
             case "public":
                 return "ALLOWED";
