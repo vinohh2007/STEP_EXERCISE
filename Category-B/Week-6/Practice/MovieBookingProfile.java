@@ -29,7 +29,6 @@ public class MovieBookingProfile {
         this.confirmed = confirmed;
     }
 
-    // Write-only: stores a one-way transformed value; no getOtp() exists anywhere.
     public void setOtp(String otp) {
         this.otpHash = String.valueOf(otp.hashCode());
     }
