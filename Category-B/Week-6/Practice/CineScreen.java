@@ -16,14 +16,14 @@ public class CineScreen {
         if (seatsAvailable > 0) {
             seatsAvailable--;
         }
-        // else: silently rejected, count never goes negative
+        
     }
 
     public void cancelBooking() {
         if (seatsAvailable < seatsTotal) {
             seatsAvailable++;
         }
-        // else: silently rejected, count never exceeds seatsTotal
+        
     }
 
     public int getSeatsAvailable() {
