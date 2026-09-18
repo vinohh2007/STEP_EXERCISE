@@ -2,10 +2,7 @@ package pageturner;
 
 import java.util.Arrays;
 
-// Note: kept as a non-final class (fields are final, no mutators, defensive
-// copies in/out) rather than a literally `final` class, because
-// ReferenceOnlyLoanReceipt must extend it — Java does not allow subclassing a
-// class declared final.
+
 public class LoanReceipt {
     private final String memberId;
     private final String[] bookIds;
