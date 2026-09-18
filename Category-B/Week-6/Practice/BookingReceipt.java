@@ -2,10 +2,7 @@ package cinehub;
 
 import java.util.Arrays;
 
-// Note: kept as a non-final class (fields are final, no mutators, defensive
-// copies in/out) rather than a literally `final` class, because
-// GroupBookingReceipt must extend it — Java does not allow subclassing a
-// class declared final.
+
 public class BookingReceipt {
     private final String bookingId;
     private final String[] seatNumbers;
